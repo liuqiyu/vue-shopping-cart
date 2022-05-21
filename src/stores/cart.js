@@ -24,7 +24,13 @@ export const useCartStore = defineStore({
       this.shoppingCart.push(name)
     },
     removeItem (name) {
-      // this.
+      let index = this.shoppingCart.lastIndexOf(name)
+      if (index >= 0) {
+        this.shoppingCart.splice(index, 1)
+      }
+    },
+    clearItem () {
+      this.shoppingCart = []
     }
   }
 })
